@@ -10,7 +10,7 @@ RUN chmod 0644 /etc/cron.d/my-cron
 RUN chmod 0644 /var/cmd.sh
 
 # Create the log file to be able to run tail
-# RUN touch /var/log/cron.log
+RUN touch /var/log/cron.log
 
 #Install Cron
 RUN apt-get update
