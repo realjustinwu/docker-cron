@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-MAINTAINER docker@ekito.fr
+MAINTAINER justinwutop@gmail.com
 
 # Add crontab file in the cron directory
 ADD crontab /etc/cron.d/my-cron
@@ -14,8 +14,9 @@ RUN touch /var/log/cron.log
 
 #Install Cron
 RUN apt-get update
-RUN apt-get -y install cron
+RUN apt-get -y install cron rsync openssh-client
 
+echo -e 'Host *\n StrictHostKeyChecking no' > /root/.ssh/config
 
 # Run the command on container startup
 CMD cron && tail -f /var/log/cron.log
