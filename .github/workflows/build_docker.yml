@@ -18,9 +18,9 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
         name: Build image
-        working-directory: docker
+        working-directory: ./
         run: docker-compose build
       -
         name: Push image
-        working-directory: docker
+        working-directory: ./
         run: docker-compose push
