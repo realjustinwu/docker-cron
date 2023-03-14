@@ -1,0 +1,7 @@
+version: '3'
+services:
+  gateway:
+    image: justinwutop/crontab:0.0.1
+    build:
+      context: ./
+      dockerfile: Dockerfile
