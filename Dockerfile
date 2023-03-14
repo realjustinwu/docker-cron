@@ -16,7 +16,7 @@ RUN touch /var/log/cron.log
 RUN apt-get update
 RUN apt-get -y install cron rsync openssh-client
 
-echo -e 'Host *\n StrictHostKeyChecking no' > /root/.ssh/config
+RUN echo -e 'Host *\n StrictHostKeyChecking no' > /root/.ssh/config
 
 # Run the command on container startup
 CMD cron && tail -f /var/log/cron.log
